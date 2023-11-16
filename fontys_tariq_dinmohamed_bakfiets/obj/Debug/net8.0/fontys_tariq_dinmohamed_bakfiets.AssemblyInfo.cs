@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("fontys_tariq_dinmohamed_bakfiets")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e0c0e10f2c7e1562b1c7fb20dc97494cde8e805")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f63df812735a7bdf109bcd8a4e271ba5b8b0834d")]
 [assembly: System.Reflection.AssemblyProductAttribute("fontys_tariq_dinmohamed_bakfiets")]
 [assembly: System.Reflection.AssemblyTitleAttribute("fontys_tariq_dinmohamed_bakfiets")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
