@@ -25,14 +25,14 @@ namespace fontys_tariq_dinmohamed_bakfiets
 
         public static void PrintTypes(string displayName, Enum type)
         {
-            Console.WriteLine($"Available {displayName} and costs:");
+            Console.WriteLine($"Beschikbare {displayName} en kosten:");
 
             // Create a variable of the corresponding Enum type
             var valuesArray = Enum.GetValues(type.GetType());
 
             foreach (var item in valuesArray)
             {
-                Console.WriteLine($"{item} - Cost: {(int)item}");
+                Console.WriteLine($"{item} - Kosten: {(int)item}");
             }
 
             Console.WriteLine();

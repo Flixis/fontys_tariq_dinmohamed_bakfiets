@@ -18,9 +18,21 @@ namespace fontys_tariq_dinmohamed_bakfiets
             //Printout the different BikeTypes types from enum
             EnumTypes.BikeTypes BikeType = new EnumTypes.BikeTypes();
             EnumTypes.PrintTypes("BikeTypes", BikeType);
+            //Calculate bike costs
+            billingAmount = CalculateBillingAmount(billingAmount, BikeType, "Fietsen");
+            Console.WriteLine($"De totaal prijs is: {billingAmount}");
+
+            //Formatting on prompt is nicer with this
+            Console.WriteLine();
             //Printout the different accessoryType types from enum
             EnumTypes.AccesoryTypes accessoryType = new EnumTypes.AccesoryTypes();
             EnumTypes.PrintTypes("Accesories", accessoryType);
+            //Calculate accessory costs
+            billingAmount = CalculateBillingAmount(billingAmount, accessoryType, "Accesories");
+
+            Console.WriteLine($"De totaal prijs is: {billingAmount}");
+            Console.WriteLine("Druk op enter om te beindigen");
+            Console.ReadLine();
         }
     }
 

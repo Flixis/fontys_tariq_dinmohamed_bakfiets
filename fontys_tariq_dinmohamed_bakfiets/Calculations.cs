@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Runtime.InteropServices.Marshalling;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,56 +11,54 @@ namespace fontys_tariq_dinmohamed_bakfiets
 {
     public class Calculations
     {
-        /*public static int CalculateBillingAmountBikeType(int billingAmount)
+        public static int CalculateBillingAmount(int billingAmount, Enum enumType, string DisplayName)
         {
-            BikeTypes selectedBikeType;
-            int amountOfBikes;
 
-            do
+            while (true)
             {
-                Console.Write("Voer het type fiets in dat je wilt huren (of voer \"volgende\" in om verder te gaan): ");
+                Console.WriteLine($"Welke van de volgende {DisplayName} zou je willen?:");
                 string userInput = Console.ReadLine();
 
-                if (string.IsNullOrEmpty(userInput) || userInput.ToLower() == "volgende")
-                {
-                    break;
-                }
-
-                //https://learn.microsoft.com/en-us/dotnet/api/system.enum.tryparse?view=net-7.0
-                *//*
-                 * Learned something new here!
+                /*
+                 *Learned something new here!
+                 *https://learn.microsoft.com/en-us/dotnet/api/system.enum.tryparse?view=net-7.0
                  * Enum tryparse.
-                 * 
-                 * In essence, It tries to match the userinput to something in the enum.
+                 *
+                 *In essence, It tries to match the userinput to something in the enum.
                  * If it fails, it will "ignore" that case and print the text below.
                  * If it matches it continues, and saves the userinput that it matched in selectedbiketype.
                  * Then we add it to the billingamount.
                  * 
                  * Pretty cool stuff imo, I guess enum parsing is popular enough that MSF made their own function for it.
-                 
-                 *//*
-                if (!Enum.TryParse<BikeTypes>(userInput, true, out selectedBikeType))
+                */
+                if (!Enum.TryParse(enumType.GetType(), userInput, true, out var enumValue))
                 {
-                    Console.WriteLine("Ongeldige fietsselectie. Maak een keuze uit de vermelde opties.");
+                    Console.WriteLine("Ongeldige selectie. Maak een keuze uit de vermelde opties.");
                     continue;
                 }
 
-                Console.Write("Hoeveel van deze fietsen wil je huren? ");
+                Console.Write($"Hoeveel van deze {DisplayName} wilt u huren?: ");
                 //Sanitise the input, with this cool shorthand if parser.
-                if (!int.TryParse(Console.ReadLine(), out amountOfBikes))
+                if (!int.TryParse(Console.ReadLine(), out int quantity))
                 {
                     Console.WriteLine("Ongeldige invoer. Voer een getal in.");
                     continue;
                 }
 
-                int amountByBikes = amountOfBikes * (int)selectedBikeType;
-                billingAmount += amountByBikes;
+                billingAmount += (int)enumValue * quantity;
 
-                Console.WriteLine($"Totaal prijs: {billingAmount}");
-            } while (true);
+                // Ask if the user wants to add more items
+                Console.Write("Wil je meer items toevoegen? (ja/nee): ");
+                string addMore = Console.ReadLine().Trim().ToLower();
 
+                if (addMore != "ja")
+                {
+                    break; // Exit the loop if the user doesn't want to add more items
+                }
+            }
+
+            // Return the updated billingAmount
             return billingAmount;
-        }*/
-
+        }
     }
 }
