@@ -12,3 +12,4 @@ C:\Users\Tariq\source\repos\fontys_tariq_dinmohamed_bakfiets\fontys_tariq_dinmoh
 C:\Users\Tariq\source\repos\fontys_tariq_dinmohamed_bakfiets\fontys_tariq_dinmohamed_bakfiets\obj\Debug\net8.0\fontys_tariq_dinmohamed_bakfiets.pdb
 C:\Users\Tariq\source\repos\fontys_tariq_dinmohamed_bakfiets\fontys_tariq_dinmohamed_bakfiets\obj\Debug\net8.0\fontys_tariq_dinmohamed_bakfiets.genruntimeconfig.cache
 C:\Users\Tariq\source\repos\fontys_tariq_dinmohamed_bakfiets\fontys_tariq_dinmohamed_bakfiets\obj\Debug\net8.0\ref\fontys_tariq_dinmohamed_bakfiets.dll
+C:\Users\Tariq\source\repos\fontys_tariq_dinmohamed_bakfiets\fontys_tariq_dinmohamed_bakfiets\obj\Debug\net8.0\fontys_tariq_dinmohamed_bakfiets.sourcelink.json
