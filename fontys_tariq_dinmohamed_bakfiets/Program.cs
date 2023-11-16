@@ -6,7 +6,7 @@ using static fontys_tariq_dinmohamed_bakfiets.EnumTypes;
 
 namespace fontys_tariq_dinmohamed_bakfiets
 {
-    //Who thought it was a good idea to inhert namespace from filename... I want my file to be named main...
+    //Who thought it was a good idea to inhert class from filename... I want my file to be named main...
     internal class Program
     {
         static void Main(string[] args)
