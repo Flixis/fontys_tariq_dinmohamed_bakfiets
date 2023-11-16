@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.Marshalling;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,6 +36,7 @@ namespace fontys_tariq_dinmohamed_bakfiets
         public static int CalculateBillingAmountBikeType(int billingAmount)
         {
             BikeTypes selectedBikeType;
+            int amountOfBikes;
 
             do
             {
@@ -65,11 +67,22 @@ namespace fontys_tariq_dinmohamed_bakfiets
                     continue;
                 }
 
-                billingAmount += (int)selectedBikeType;
-                //Keep printing the amount, otherwise the user has no idea how much they have spend
+                Console.Write("Hoeveel van deze fietsen wil je huren? ");
+                //Sanitise the input, with this cool shorthand if parser.
+                if (!int.TryParse(Console.ReadLine(), out amountOfBikes))
+                {
+                    Console.WriteLine("Ongeldige invoer. Voer een getal in.");
+                    continue;
+                }
+
+                int amountByBikes = amountOfBikes * (int)selectedBikeType;
+                billingAmount += amountByBikes;
+
                 Console.WriteLine($"Totaal prijs: {billingAmount}");
             } while (true);
+
             return billingAmount;
         }
+
     }
 }
