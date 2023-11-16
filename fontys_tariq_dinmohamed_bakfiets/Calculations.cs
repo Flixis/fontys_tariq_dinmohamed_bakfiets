@@ -5,35 +5,12 @@ using System.Runtime.InteropServices.Marshalling;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace fontys_tariq_dinmohamed_bakfiets
 {
-    public class BikeType
+    public class Calculations
     {
-        public enum BikeTypes
-        {
-            Stadfiets = 10,
-            Sprintfiets = 20,
-            Bakfiets = 30,
-            Mountainbike = 40
-        }
-
-        public static void PrintBikeTypes()
-        {
-            /**
-             * Here, we iterate through the BikeTypes enum, one type at a time, 
-             * and for each type, we retrieve its value (integer representation).
-             * We then assign both the type's name and its associated value to 'bikeType'.
-             */
-
-            Console.WriteLine("Beschikbare fietstypes en kosten:");
-            foreach (BikeTypes bikeType in Enum.GetValues(typeof(BikeTypes)))
-            {
-                Console.WriteLine($"{bikeType} - Cost: {(int)bikeType}");
-            }
-            Console.WriteLine();
-        }
-
-        public static int CalculateBillingAmountBikeType(int billingAmount)
+        /*public static int CalculateBillingAmountBikeType(int billingAmount)
         {
             BikeTypes selectedBikeType;
             int amountOfBikes;
@@ -49,7 +26,7 @@ namespace fontys_tariq_dinmohamed_bakfiets
                 }
 
                 //https://learn.microsoft.com/en-us/dotnet/api/system.enum.tryparse?view=net-7.0
-                /*
+                *//*
                  * Learned something new here!
                  * Enum tryparse.
                  * 
@@ -60,7 +37,7 @@ namespace fontys_tariq_dinmohamed_bakfiets
                  * 
                  * Pretty cool stuff imo, I guess enum parsing is popular enough that MSF made their own function for it.
                  
-                 */
+                 *//*
                 if (!Enum.TryParse<BikeTypes>(userInput, true, out selectedBikeType))
                 {
                     Console.WriteLine("Ongeldige fietsselectie. Maak een keuze uit de vermelde opties.");
@@ -82,7 +59,7 @@ namespace fontys_tariq_dinmohamed_bakfiets
             } while (true);
 
             return billingAmount;
-        }
+        }*/
 
     }
 }

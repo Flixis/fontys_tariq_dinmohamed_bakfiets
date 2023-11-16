@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using static fontys_tariq_dinmohamed_bakfiets.BikeType;
+using static fontys_tariq_dinmohamed_bakfiets.Calculations;
+using static fontys_tariq_dinmohamed_bakfiets.EnumTypes;
 
 namespace fontys_tariq_dinmohamed_bakfiets
 {
@@ -14,10 +15,12 @@ namespace fontys_tariq_dinmohamed_bakfiets
             //I decided to switch it up, bakfietsen alone are boring.
             Console.WriteLine("Hallo, Welkom bij V.D Brinckes Fietsen");
             Console.WriteLine("Maak een keuze uit te volgende typen fietsen\n");
-            //Printout the different bike types from enum
-            BikeType.PrintBikeTypes();
-            billingAmount = BikeType.CalculateBillingAmountBikeType(billingAmount);
-            Console.WriteLine($"Totaal prijs: {billingAmount}");    
+            //Printout the different BikeTypes types from enum
+            EnumTypes.BikeTypes BikeType = new EnumTypes.BikeTypes();
+            EnumTypes.PrintTypes("BikeTypes", BikeType);
+            //Printout the different accessoryType types from enum
+            EnumTypes.AccesoryTypes accessoryType = new EnumTypes.AccesoryTypes();
+            EnumTypes.PrintTypes("Accesories", accessoryType);
         }
     }
 
