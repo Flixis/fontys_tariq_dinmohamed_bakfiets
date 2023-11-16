@@ -1,5 +1,7 @@
 ﻿# Bakfiets project
 
+![diagram](diagram.png)
+
 ## What it needs to do
 
 Ask for type of bike
