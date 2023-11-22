@@ -13,11 +13,11 @@ namespace fontys_tariq_dinmohamed_bakfiets
     {
         public static int CalculateBillingAmount(int billingAmount, Enum enumType, string DisplayName)
         {
-
-            while (true)
+            bool addMore = true;
+            while (addMore)
             {
                 Console.WriteLine($"Welke van de volgende {DisplayName} zou je willen?:");
-                string userInput = Console.ReadLine();
+                string userInput = Console.ReadLine().Trim().ToLower();
 
                 /*
                  *Learned something new here!
@@ -49,11 +49,11 @@ namespace fontys_tariq_dinmohamed_bakfiets
 
                 // Ask if the user wants to add more items
                 Console.Write("Wil je meer items toevoegen? (ja/nee): ");
-                string addMore = Console.ReadLine().Trim().ToLower();
-
-                if (addMore != "ja")
+                userInput = Console.ReadLine().Trim().ToLower();
+                if (userInput != "ja")
                 {
-                    break; // Exit the loop if the user doesn't want to add more items
+                    addMore = false;
+                    continue;
                 }
             }
 
