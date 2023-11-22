@@ -11,12 +11,12 @@ namespace fontys_tariq_dinmohamed_bakfiets
 {
     public class Calculations
     {
-        public static int CalculateBillingAmount(int billingAmount, Enum enumType, string DisplayName)
+        public static int CalculateBillingAmount(int billingAmount, ref List<object> receipt, Enum enumType, string Category)
         {
             bool addMore = true;
             while (addMore)
             {
-                Console.WriteLine($"Welke van de volgende {DisplayName} zou je willen?:");
+                Console.WriteLine($"Welke van de volgende {Category} zou je willen?:");
                 string userInput = Console.ReadLine().Trim().ToLower();
 
                 /*
@@ -31,13 +31,13 @@ namespace fontys_tariq_dinmohamed_bakfiets
                  * 
                  * Pretty cool stuff imo, I guess enum parsing is popular enough that MSF made their own function for it.
                 */
-                if (!Enum.TryParse(enumType.GetType(), userInput, true, out var enumValue))
+                if (!Enum.TryParse(enumType.GetType(), userInput, true, out var SelectedItem))
                 {
                     Console.WriteLine("Ongeldige selectie. Maak een keuze uit de vermelde opties.");
                     continue;
                 }
 
-                Console.Write($"Hoeveel van deze {DisplayName} wilt u huren?: ");
+                Console.Write($"Hoeveel van deze {Category} wilt u huren?: ");
                 //Sanitise the input, with this cool shorthand if parser.
                 if (!int.TryParse(Console.ReadLine(), out int quantity))
                 {
@@ -45,7 +45,10 @@ namespace fontys_tariq_dinmohamed_bakfiets
                     continue;
                 }
 
-                billingAmount += (int)enumValue * quantity;
+                billingAmount += (int)SelectedItem * quantity;
+                
+                //Update the receipt
+                receipt.Add($"{Category}: {SelectedItem} - Prijs: {(int)SelectedItem} - Hoeveelheid: {quantity}");
 
                 // Ask if the user wants to add more items
                 Console.Write("Wil je meer items toevoegen? (ja/nee): ");
@@ -55,6 +58,8 @@ namespace fontys_tariq_dinmohamed_bakfiets
                     addMore = false;
                     continue;
                 }
+
+                
             }
 
             // Return the updated billingAmount
