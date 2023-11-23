@@ -14,6 +14,7 @@ namespace fontys_tariq_dinmohamed_bakfiets
         static void Main(string[] args)
         {
             int billingAmount = 0;
+            int amountOfDays = 0;
             List<object> receipt = new List<object>();
 
             //I decided to switch it up, bakfietsen alone are boring.
@@ -34,12 +35,18 @@ namespace fontys_tariq_dinmohamed_bakfiets
             //Calculate accessory costs
             billingAmount = CalculateBillingAmount(billingAmount, ref receipt,accessoryType, "Accesories");
 
+            Console.WriteLine("Voor hoeveel dagen zou je willen huren?: ");
+            amountOfDays = Convert.ToInt32(Console.ReadLine().Trim().ToLower());
+            billingAmount = billingAmount * amountOfDays;
+
+
             Console.WriteLine("Totaal bon:");
             Console.WriteLine("------------------------------------");
             foreach (var item in receipt)
             {
                 Console.WriteLine(item);
             }
+            Console.WriteLine($"Dagen betaald: {amountOfDays}");
             Console.WriteLine("------------------------------------");
             Console.WriteLine($"De totaal prijs is: {billingAmount}");
 
